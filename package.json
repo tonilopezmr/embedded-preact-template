@@ -1,0 +1,34 @@
+{
+  "name": "configduino-sample",
+  "version": "1.0.0",
+  "description": "Sameple configduino application. Shows off all the components.",
+  "main": "webpack.config.babel.js",
+  "repository": "https://github.com/madpilot/configduino-sample",
+  "author": "Myles Eftos <myles@madpilot.com.au>",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p --progress && ./embedded.sh",
+    "start": "npm run webpack-dev-server -- --env.mode development",
+    "clean": "rimraf build",
+    "test": "jest --coverage",
+    "test:watch": "yarn run -s test -- --watch",
+    "webpack-dev-server": "webpack-dev-server --history-api-fallback"
+  },
+  "dependencies": {
+    "preact": "^8.5.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-inline-source-plugin": "^0.0.9",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.20.2",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "^2.11.5"
+  }
+}
