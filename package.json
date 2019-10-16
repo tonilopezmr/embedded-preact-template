@@ -7,11 +7,13 @@
   "author": "tonilopezmr <tonilopezmr@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --progress && ./embedded.sh",
+    "build:em": "NODE_ENV=production webpack -p --progress && ./embedded.sh",
+    "build": "NODE_ENV=production webpack -p --progress && node cssoptimizer.js",
     "start": "npm run webpack-dev-server -- --env.mode development",
     "clean": "rimraf build",
     "test": "jest --coverage",
     "test:watch": "yarn run -s test -- --watch",
+    "op:css": "node cssoptimizer.js",
     "webpack-dev-server": "webpack-dev-server --history-api-fallback"
   },
   "dependencies": {
