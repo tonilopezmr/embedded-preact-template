@@ -37,7 +37,7 @@ export default {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader?modules&localIdentName=" + (ENV == 'production' ? "[hash:base64:4]" : "[name]__[local]___[hash:base64:5]")
+          use: "css-loader?modules&localIdentName=" + (ENV == 'production' ? "[local]" : "[local]")
         })
       },
     ]
